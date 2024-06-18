@@ -1,0 +1,12 @@
+:root {
+  --accent-text-color: rgba(71, 119, 237, 1);
+  --main-color: rgba(255, 255, 255, 1);
+  --main-color-opacity: rgba(255, 255, 255, 0.5);
+  --decorated-zone-color: rgba(35, 100, 219, 1);
+  --bg-color: rgba(53, 121, 245, 1);
+  --main-font: "Inter-Variable", "Arial", sans-serif;
+  --button-font-size: 14px;
+  --button-line-height: 20px;
+	--main-font-weight:400;
+	--header-font-weight:600;
+}
