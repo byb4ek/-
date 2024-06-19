@@ -89,7 +89,7 @@ a {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 76px;
+  gap: 16px;
   margin: 16px 18px 15px 22px;
 }
 
@@ -101,33 +101,8 @@ a {
   gap: 68px;
 }
 
-/* .progress {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-	position: relative;
-  width: 60px;
-  height: 60px;
-	font-family: var(--main-font);
-	color: var(--main-color);
-	line-height: 30px;
-	font-size: 20px;
-	font-weight: var(--main-font-weight);
-  border: 2px solid var(--main-color-opacity);
-  border-radius: 50%;
-} */
-
-/* .circle{
-  position: absolute;
-	width: 60px;
-  height: 60px;
-  border: 2px solid var(--main-color);
-  border-radius: 50%;
-	transition: background-color 0.3s, color 0.3s, width 0.3s, border-width 0.3s, border-color 0.3s;
-} */
-
 .open-check-list {
-  display: flex;
+	display: flex;
   justify-content: center;
   align-items: center;
   font-family: var(--main-font);
@@ -143,73 +118,30 @@ a {
 }
 
 .open-check-list:focus {
-  outline: none;
+	outline: none;
 }
 
-.progress-bar-wrapper {
-  position: relative;
-  top: 12px;
-  left: -8px;
-  display: block;
-  height: 100px;
-}
-
-.center-circle {
-  width: 50px;
-  height: 50px;
-  position: absolute;
-  border-radius: 50%;
-  background: transparent;
-  transform: translate3d(15px, 15px, 0);
-  z-index: 3;
-}
-
-.sector {
+.circle {
+  display: flex;
   width: 60px;
   height: 60px;
-  position: absolute;
   border-radius: 50%;
-  transform: translate3d(7px, 7px, 0);
-  z-index: 2;
-  display: block;
-  background-color: var(--bg-color);
-  border: 2px solid var(--main-color);
-  background-image: linear-gradient(0deg, transparent 50%, white 15%),
-    linear-gradient(90deg, white 50%, transparent 50%);
-  animation: background 10s infinite;
+  background: conic-gradient(var(--main-color) var(--progress), var(--main-color-opacity) 0deg);
+  font-size: 0;
 }
 
-@keyframes background {
-  0% {
-    background-image: linear-gradient(0deg, white 50%, transparent 50%),
-      linear-gradient(51deg, white 50%, transparent 50%);
-  }
-  14% {
-    background-image: linear-gradient(51deg, white 50%, transparent 50%),
-      linear-gradient(102deg, white 50%, transparent 50%);
-  }
-  29% {
-    background-image: linear-gradient(102deg, white 50%, transparent 50%),
-      linear-gradient(153deg, white 50%, transparent 50%);
-  }
-  44% {
-    background-image: linear-gradient(153deg, white 50%, transparent 50%),
-      linear-gradient(204deg, white 50%, transparent 50%);
-  }
-  57% {
-    background-image: linear-gradient(204deg, white 50%, transparent 50%),
-      linear-gradient(255deg, white 50%, transparent 50%);
-  }
-  72% {
-    background-image: linear-gradient(255deg, white 50%, transparent 50%),
-      linear-gradient(306deg, white 50%, transparent 50%);
-  }
-  85% {
-    background-image: linear-gradient(306deg, white 50%, transparent 50%),
-      linear-gradient(360deg, white 50%, transparent 50%);
-  }
-  100% {
-    background-image: linear-gradient(360deg, white 50%, transparent 50%),
-      linear-gradient(360deg, white 50%, transparent 50%);
-  }
+.circle::after {
+  content: attr(data-progress) '/7';
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 60px;
+  margin: 2px;
+  border-radius: 50%;
+  background: var(--bg-color);
+  font-family: var(--main-font);
+	font-size: 20px;
+	line-height: 30px;
+	color:var(--main-color);
+  text-align: center;
 }
